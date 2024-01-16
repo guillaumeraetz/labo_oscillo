@@ -1,0 +1,38 @@
+Tâche 5 - Configuration du Timing
+Comme prochaine tâche, nous voulons analyser les temps d'exécution des différents composants du logiciel. En principe, nous avons deux composants qui peuvent être exécutés à deux vitesses différentes :
+
+#	Composant	Timing
+1	Conversion du signal analogue	1 kHz ou plus
+2	Rafraichissement de l'écran	20 à 60 fois par seconde
+Question 1
+Est-ce qu'il est possible d'exécuter le composant #1 avec un XF (ou un RTOS) ? Justifiez votre réponse.
+
+Question 2
+Est-ce qu'il est possible d'exécuter le composant #2 avec un XF (ou un RTOS) ? Justifiez votre réponse.
+
+Question 3
+Si l'on combine un timer hardware avec un XF, lequel des deux composants doit être priorisé ? Justifiez votre réponse.
+
+
+
+
+
+Tâche 7 - Configuration de l'ADC (Software Triggered)
+Pour commencer, on désire pouvoir mesurer des signaux jusqu'à une fréquence de 1 kHz.
+
+Question 1
+Combien de mesures [Samples/s] le convertisseur A/D doit-il effectuer par seconde pour pouvoir échantillonner des signaux avec des fréquences jusqu'à 1 kHz ?
+min 2000/sec
+Question 2
+Faut-il un filtre ? Si oui, quelle sera la fréquence de coupure de ce filtre ?
+
+Question 3
+Est-ce la fréquence donnée par le théorème d’échantillonnage ou devrait-elle être plus élevée ?
+
+Pour notre démarche, il nous faut le périphérique ADC3 du microcontrôleur. Les périphériques ADC1 et ADC2 ne seront pas utilisés dans ce projet.
+
+Question 4
+Lequel des canaux du ADC3 doit être utilisé pour pouvoir mesurer / échantillonner le signal à l'aide de la broche PA0 ?
+
+Question 5
+Est-ce que le ADC pourrait éventuellement effectuer des mesures à des intervalles réguliers à l'aide de ses propres moyens ?
