@@ -6,13 +6,16 @@ Comme prochaine tâche, nous voulons analyser les temps d'exécution des différ
 2	Rafraichissement de l'écran	20 à 60 fois par seconde
 Question 1
 Est-ce qu'il est possible d'exécuter le composant #1 avec un XF (ou un RTOS) ? Justifiez votre réponse.
+non car le xf exécute sa fonction principal processevent avec un intervalle de l'ordre de 1ms min. c'est à dire une fréquence de 1khz max.
+On aura donc une fréquence de sampling de 1khz max ce qui nous permettrait de mesure uniquement des signaux ayant des fréquences inférieures à 500Hz.
 
 Question 2
 Est-ce qu'il est possible d'exécuter le composant #2 avec un XF (ou un RTOS) ? Justifiez votre réponse.
+oui la fréquence est suffisamment basse
 
 Question 3
-Si l'on combine un timer hardware avec un XF, lequel des deux composants doit être priorisé ? Justifiez votre réponse.
-
+Si l'on génère un signal de l'ordre de quelques kHz à l'aide d'un timer hardware et qu'on le combine avec un XF, lequel des deux composants doit être priorisé ? Justifiez votre réponse.
+LE timer hardware est prioritaire car une bonne mesure du signal est prioritaire sur le fait d'avoir un affichage régulier des mesures sur l'écran.
 
 
 
