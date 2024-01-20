@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -131,7 +131,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  HAL_ADC_Start_IT(&hadc3);
+	  HAL_Delay(2000);
     /* USER CODE END WHILE */
+	  printf("test");
 
     /* USER CODE BEGIN 3 */
   }
