@@ -37,6 +37,16 @@
 			<location>C:/Users/graet/Desktop/Oscilloscopefinal/work/RealtimeOscilloscope/src/app</location>
 		</link>
 		<link>
+			<name>config</name>
+			<type>2</type>
+			<location>C:/Users/graet/Desktop/Oscilloscopefinal/work/RealtimeOscilloscope/src/config</location>
+		</link>
+		<link>
+			<name>default-cmsis-os</name>
+			<type>2</type>
+			<location>C:/Users/graet/Desktop/Oscilloscopefinal/work/RealtimeOscilloscope/src/xf/port/default-cmsis-os</location>
+		</link>
+		<link>
 			<name>event</name>
 			<type>2</type>
 			<location>C:/Users/graet/Desktop/Oscilloscopefinal/work/RealtimeOscilloscope/src/event</location>

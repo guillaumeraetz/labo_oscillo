@@ -8,10 +8,23 @@
 #include "stm32f7xx_hal.h"
 #include "main.h"
 #include "board/buttonscontroller.h"
+#include "isrs.h"
+#include <stdint.h>
+
+
+uint16_t adcValuesBuffer[8000]; //80*100 values
+uint16_t index;
+
 
 extern "C" void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef * hadc)
 {
-volatile uint32_t value = HAL_ADC_GetValue(hadc);
+//volatile uint32_t value = HAL_ADC_GetValue(hadc);
+	adcValuesBuffer[index] = HAL_ADC_GetValue(hadc);
+	if(index>=7999)
+	{
+		index=0;
+	}
+	index++;
 
 }
 

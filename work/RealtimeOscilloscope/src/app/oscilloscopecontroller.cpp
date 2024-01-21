@@ -5,6 +5,8 @@
 #include "main.h"
 #include "gui.h"
 #include "oscilloscopecontroller.h"
+#include "core/Src/isrs.h"
+
 
 namespace oscilloscope {
 
@@ -111,6 +113,35 @@ void Controller::onCheckBoxTriggerCheckState(bool checked)
 void Controller::doShowAnalogSignal()
 {
 	// TODO: Call gui().drawGraphPoints() with the appropriate data.
+	//code for test the display
+	//gui().drawGraphPoints(_adcValuesBuffer,_adcValuesBufferSize,1);
+	//good code with calculating the scaling factor
+	//this factor depend of tdiv
+	switch (_tdivValue) {
+	        case TDIV_500us:
+	            gui().drawGraphPoints(_adcValuesBuffer, _adcValuesBufferSize, ((100000.0*0.5*8)/(1000*640)));
+	            break;
+
+	        case TDIV_1ms:
+	            gui().drawGraphPoints(_adcValuesBuffer, _adcValuesBufferSize, ((100000.0*1*8)/(1000*640)));
+	            break;
+
+	        case TDIV_2ms:
+	            gui().drawGraphPoints(_adcValuesBuffer, _adcValuesBufferSize, ((100000.0*2*8)/(1000*640)));
+	            break;
+
+	        case TDIV_5ms:
+	            gui().drawGraphPoints(_adcValuesBuffer, _adcValuesBufferSize, ((100000.0*5*8)/(1000*640)));
+	            break;
+
+	        case TDIV_10ms:
+	            gui().drawGraphPoints(_adcValuesBuffer, _adcValuesBufferSize, ((100000.0*10*8)/(1000*640)));
+	            break;
+
+	        default:
+	            break;
+	    }
+
 }
 
 void Controller::doButtonTimePlusPressed()
